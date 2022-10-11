@@ -1,0 +1,253 @@
+//====================================================================================================
+.header {
+	background-color: var(--backgroundColor);
+	width: 100%;
+}
+.header__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	// height: 300px;
+	@include adaptiveValue("height", 300, 100);
+}
+.header-central__logo img {
+	width: 250px;
+	// height: 100px;
+}
+.menu-button a {
+	font-family: "Noto Sans";
+	margin: 0 2.5em;
+	padding: 0.618em 0;
+	text-decoration: none;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 10px;
+	letter-spacing: .18em;
+	text-transform: uppercase;
+
+	&:hover {
+		color: $mainTitleColor;
+	}
+}
+
+//====================================================================================================
+
+//Burger
+$menu-bg: #DE4152;
+// $menu-bg: #fc8621;
+$menu-color: #ffffff;
+$menu-font-size: 2.5rem;
+$menu-zindex: 3;
+// $hamburger-color: #fff;
+$hamburger-color: var(--hamburg-color);
+
+$hamburger-width: 50px;
+$hamburger-height: 50px;
+$hamburger-zindex: $menu-zindex;
+
+@media (max-width: 550px) {
+
+	.header-left,
+	.header-right {
+		display: none;
+	}
+}
+
+.header-nav {
+	display: none;
+}
+.header-nav__item {
+	font-family: "Noto Sans";
+	font-weight: 500;
+	font-style: normal;
+	font-size: 16px;
+	letter-spacing: .24em;
+	line-height: 2.4em;
+	text-transform: uppercase;
+	// border: 1px solid red;
+}
+
+@media (max-width: 550px) {
+	.header__container {
+		// width: 100% !important;
+		// border: 1px solid red;
+	}
+
+	.header-nav {
+		// display: block;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		// overflow: hidden;
+		position: fixed;
+		// font-family: "Noto Sans";
+		font-size: 60px;
+		font-weight: 400;
+		padding-top: 4rem;
+		padding-left: 2rem;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		background-color: $menu-bg;
+		z-index: $menu-zindex;
+		overflow: auto;
+
+		&.open {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				-webkit-animation-duration: 1s;
+				animation-duration: 1.0s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					-webkit-transform: translate3d(0, 100%, 0);
+					transform: translate3d(0, 100%, 0);
+				}
+
+				to {
+					opacity: 1;
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+		}
+
+		ul {
+			list-style: none;
+			margin-top: 0px;
+			padding: 0;
+			@include adaptiveValue("column-gap", 60, 20);
+
+			li {
+				margin-top: 1.5rem;
+				font-family: "Open Sans";
+				font-weight: 700;
+				font-size: 30px;
+				color: #000;
+			}
+
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				// Stops it being a twitchy mess in chrome :pray:
+				// https://www.binarymoon.co.uk/2014/02/fixing-css-transitions-in-google-chrome/
+				-webkit-transform: translateZ(0);
+				transition: opacity .3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+
+
+	// Hamburger menu toggler stuff below
+	.toggle-menu {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		right: 20px;
+		outline: none;
+		padding: 0;
+		// pointer-events: initial;
+		pointer-events: all;
+		position: relative;
+		vertical-align: middle;
+		// height: $hamburger-height;
+		// width: $hamburger-width;
+		z-index: $hamburger-zindex+10;
+
+		span {
+			// background-color: $hamburger-color;
+			background-color: #ffa600;
+			content: "";
+			display: block;
+			height: 2px;
+			left: calc(50% - 13px);
+			position: absolute;
+			top: calc(50% - 1px);
+			transform-origin: 50% 50%;
+			transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+			width: 26px;
+			// z-index: $hamburger-zindex+10;
+
+			&:before,
+			&:after {
+				// background-color: $hamburger-color;
+				background-color: #ffa600;
+				content: "";
+				display: block;
+				height: 2px;
+				position: absolute;
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+			}
+
+			&:before {
+				top: 7px;
+			}
+
+			&:after {
+				top: -7px;
+			}
+		}
+
+			&.active {
+					display: block;
+			& span {
+				display: block;
+				z-index: $hamburger-zindex;
+				background-color: transparent;
+				transition: background 0.2s ease-out;
+
+				&:before,
+				&:after {
+					transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					background-color: #000;
+				}
+
+				&:before {
+					top: 0;
+					transform: rotate3d(0, 0, 1, -45deg);
+					// transform: rotate(-45deg);
+				}
+
+				&:after {
+					top: 0;
+					transform: rotate3d(0, 0, 1, 45deg);
+					// transform: rotate(45deg);
+				}
+			}
+		}
+
+		
+	}
+}
+
+//====================================================================================================
