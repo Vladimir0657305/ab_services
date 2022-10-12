@@ -1,6 +1,7 @@
 //====================================================================================================
 .header {
-	background-color: var(--backgroundColor);
+	// background-color: var(--backgroundColor);
+	background-color: $backgroundColor;
 	width: 100%;
 }
 .header__container {
@@ -70,7 +71,7 @@ $hamburger-zindex: $menu-zindex;
 @media (max-width: 550px) {
 	.header__container {
 		// width: 100% !important;
-		// border: 1px solid red;
+		border: 1px solid red;
 	}
 
 	.header-nav {
