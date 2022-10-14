@@ -1,0 +1,18 @@
+.join-top__image {
+    @include adaptiveValue("height", 275, 170);
+        // height: 600px;
+        aspect-ratio: 4 / 2;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &img {
+            @include adaptiveValue("height", 275, 170);
+            object-fit: cover;
+            background-size: 100% auto !important;
+        }
+}
+
