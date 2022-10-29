@@ -1,5 +1,5 @@
 .quote-top__image {
-    @include adaptiveValue("height", 600, 370);
+    @include adaptiveValue("height", 400, 300);
     // height: 600px;
     aspect-ratio: 4 / 2;
     width: 100%;

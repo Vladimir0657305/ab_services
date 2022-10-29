@@ -9,10 +9,16 @@
         justify-content: center;
         align-items: center;
 
+        & p {
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: -80px;
+        }
+
         &img {
             @include adaptiveValue("height", 275, 170);
             object-fit: cover;
-            background-size: 100% auto !important;
+            background-size: 100% auto;
         }
 }
 

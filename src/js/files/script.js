@@ -3,6 +3,14 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
+import { jarallax } from "jarallax";
+jarallax(document.querySelectorAll('.jarallax-span'), {
+    speed: 0.2,
+});
+jarallax(document.querySelectorAll('.jarallax'), {
+    speed: .5,
+});
+
 
 // Burger Button animation =========================================================================
 const buttons = document.querySelectorAll('button');
@@ -186,3 +194,8 @@ for (var i = 0; i < elements.length; i++) {
     }
 }
 // Parallax Effect End ==================================================================================
+
+
+// Contacts Start =======================================================================================
+
+// Contacts End ========================================================================================
