@@ -1,97 +1,74 @@
 <div class="contact-body">
     <div class="contact-block">
-        
-
-
-        <!-- <fieldset>
-            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your Email Address" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
-        </fieldset>
-        <fieldset>
-            <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
-        </fieldset>
-        <fieldset>
-            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-        </fieldset> -->
         <div class="container">
             <form id="contact" action="" method="post">
-                <!-- <h3>Quick Contact</h3> -->
                 <h4>Name *</h4>
-
                 <div class="contact-name">
-                    <!-- <fieldset> -->
                         <div class="contact-name__subname">
-                            <input   type="text" tabindex="1" required autofocus>
+                            <input   type="text" tabindex="1" required >
                         <span>First Name</span>
                         </div>
                         
-                    <!-- </fieldset> -->
-                    <!-- <fieldset> -->
                         <div class="contact-name__subname">
-                            <input    type="text" tabindex="2" required autofocus>
+                            <input    type="text" tabindex="2" required >
                         <span>Last Name</span>
                         </div>
-                        
-                    <!-- </fieldset> -->
                 </div>
                 <h4>Email Address *</h4>
                 <fieldset>
-                    <input placeholder="Your Email Address" type="email" tabindex="3" required>
+                    <input  type="email" tabindex="3" required>
                 </fieldset>
                 
                 <h4>What can we help with?</h4>
                 <h5>Please select the services you are inquiring about.</h5>
                 <div class="checkbox">
-                    <label for="">
-                        <input type="checkbox">
+                    <label for="Bookkeeping">
+                        <input id="Bookkeeping" type="checkbox" class="checkboxInput">
                         "Bookkeeping"
                     </label>
-                    <label for="">
-                        <input type="checkbox">
-                        "Bookkeeping"
+                    <label for="Payroll">
+                        <input id="Payroll" type="checkbox" class="checkboxInput">
+                        "Payroll"
                     </label>
-                    <label for="">
-                        <input type="checkbox">
-                        "Bookkeeping"
+                    <label for="Personal">
+                        <input id="Personal" type="checkbox" class="checkboxInput">
+                        "Personal Tax"
                     </label>
-                    <label for="">
-                        <input type="checkbox">
-                        "Bookkeeping"
+                    <label for="Corporate">
+                        <input id="Corporate" type="checkbox" class="checkboxInput">
+                        "Corporate Tax and Notice to Reader Financial Statements"
                     </label>
-                    <label for="">
-                        <input type="checkbox">
-                        "Bookkeeping"
+                    <label for="Film">
+                        <input id="Film" type="checkbox" class="checkboxInput">
+                        "Film Production Accounting & Canadian Film Tax Credits"
                     </label>
-                    <label for="">
-                        <input type="checkbox">
-                        "Bookkeeping"
+                    <label for="Other">
+                        <input id="Other" type="checkbox" class="checkboxInput">
+                        "Other"
                     </label>
                 </div>
                 
+                <h4>Subject *</h4>
                 <fieldset>
-                    <input placeholder="Your Phone Number" type="tel" tabindex="4" required>
+                    <input  type="tel" tabindex="4" required>
                 </fieldset>
+                <h4>Message *</h4>
                 <fieldset>
-                    <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+                    <textarea  tabindex="5" required></textarea>
                 </fieldset>
                 <fieldset>
                     <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
                 </fieldset>
             </form>
-        
-        
         </div>
-
-
-
     </div>
-    <div class="contact-map"></div>
+    
+    <div class="contact-map">
+        <div id='map' style=' height: 400px;'></div>
+        <div class="contact-map__title title">
+            <span>OUR OFFICE LOCATION</span>
+            <p>600-890 W Pender Street, Vancouver, BC</p>
+        </div>
+    </div>
+    
 </div>

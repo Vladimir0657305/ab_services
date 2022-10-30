@@ -198,4 +198,24 @@ for (var i = 0; i < elements.length; i++) {
 
 // Contacts Start =======================================================================================
 
+// Map creation
+// https://maplibre.org/maplibre-gl-js-docs/api/
+
+var map = new maplibregl.Map({
+    container: "map",
+    style:
+        "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL", // stylesheet location
+    center: [-123.1173295, 49.2856636], // starting position [lng, lat]
+    zoom: 11 // starting zoom
+});
+// Set a popup with your gps coordinates in setLngLat() and in setHTML() you put the text you want.
+// var popup = new maplibregl.Popup({ closeOnClick: false })
+// .setLngLat([4.8125028, 45.7169385])
+// .setHTML('<span>Café Charmant, Rue de la République, 69600 Oullins, France</span><br><img width="100px" src="https://uploads.lebonbon.fr/source/2017/lyon/decembre/Bonnes-adresses-Lyon-CafeI-Charmant-13-1024x768.png" alt="popup-image">')
+// .addTo(map);
+
+var nav = new maplibregl.NavigationControl();
+map.addControl(nav, "top-right");
+
 // Contacts End ========================================================================================
+
